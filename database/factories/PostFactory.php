@@ -12,7 +12,7 @@ $factory->define(Post::class, function (Faker $faker) {
             return factory(User::class)->create()->id;
         },
         'title' => $faker->sentence,
-        'slug' => Str::random(10),
+        'slug' => $faker->word(10),
         'content' => $faker->paragraph
     ];
 });

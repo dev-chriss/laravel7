@@ -33,8 +33,6 @@ class UserController extends Controller
          ->pluck('email')
          ->all();
 
-        // \Log::info('names = ' . json_encode($names));
-        
         $comments = Comment::whereNotIn('email', $names)->get();
         return view('guests.index', compact('comments'));
     }
